@@ -10,8 +10,7 @@ import plotly.graph_objs as go
 import squarify
 import joblib
 from matplotlib.pyplot import figure
-from PIL import Image   
-from wordcloud import WordCloud
+from PIL import Image
 
 
 df_1 = pd.read_csv('streamlit_presentation/datasets/df_name_Date_text_topic_keywords.csv')
@@ -261,3 +260,4 @@ with st.expander('Облака сущностей'):
 
     else:
         st.write("Облака слов - прикольная визуализация текстовых данных на стыке исследовательского анализа, инфографики и дата-дизайна.")
+    
