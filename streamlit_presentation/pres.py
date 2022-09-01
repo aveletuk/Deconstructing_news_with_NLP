@@ -2,35 +2,16 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import streamlit as st
 from streamlit import components
-from nltk.corpus import stopwords
 import streamlit.components.v1 as components
 from wordcloud import WordCloud
-import matplotlib.colors as mcolors
-import plotly.express as px
-import pandas as pd
-import matplotlib.pyplot as plt
-import nltk
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
-import seaborn as sns
-from collections import Counter
-from natasha import MorphVocab
-morph = MorphVocab()
-import plotly as py
 import plotly.graph_objs as go
 import squarify
-from plotly.offline import iplot
 import joblib
-from datetime import datetime
-import os
-import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 from PIL import Image   
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import WordCloud
 
 
 df_1 = pd.read_csv('streamlit_presentation/datasets/df_name_Date_text_topic_keywords.csv')
