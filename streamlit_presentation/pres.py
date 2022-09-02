@@ -25,7 +25,7 @@ st.set_page_config(layout="wide")
 
 st.title('Деконструкция новостей')
 st.header('Пакет инструментов для динамичного и адаптивного анализа большого корпуса новостей ТГ каналов')
-st.markdown('Подробная информация о проекте в [GitHub] (https://github.com/aveletuk/Deconstructing_news_with_NLP)!')
+st.markdown('Подробная информация о проекте в [GitHub](https://github.com/aveletuk/Deconstructing_news_with_NLP)!')
 
 st.header('РАЗВЕДОЧНЫЙ АНАЛИЗ АНАЛИЗ (Exploratory data analysis, EDA)')
 with st.expander('Описание датасета'):
