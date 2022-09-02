@@ -1,6 +1,5 @@
 import random
 import matplotlib
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -10,7 +9,6 @@ from wordcloud import WordCloud
 import plotly.graph_objs as go
 import squarify
 import joblib
-from matplotlib.pyplot import figure
 from PIL import Image
 
 
@@ -218,10 +216,10 @@ with st.expander('Облака сущностей'):
         img = Image.open("streamlit_presentation/word_clouds/comment.png")
         wave_mask = np.array(img)
         wordcloud = WordCloud(mask=wave_mask, random_state=80, contour_width=2, contour_color='orange').generate(" ".join(option))
-        fig = plt.figure()
-        plt.imshow(wordcloud, interpolation="bilinear")
-        plt.axis("off")
-        plt.style.use('dark_background')
+        fig = matplotlib.pyplot.figure()
+        matplotlib.pyplot.imshow(wordcloud, interpolation="bilinear")
+        matplotlib.pyplot.axis("off")
+        matplotlib.pyplot.style.use('dark_background')
         fig.savefig("streamlit_presentation/word_clouds/word_cloud.png")
         why_i_hate_streamlit = Image.open('streamlit_presentation/word_clouds/word_cloud.png')
         # why_i_hate_streamlit = why_i_hate_streamlit.resize((1000, 1000))
@@ -233,10 +231,10 @@ with st.expander('Облака сущностей'):
         img = Image.open("streamlit_presentation/word_clouds/mozg_3.tif")
         wave_mask = np.array(img)
         wordcloud = WordCloud(mask=wave_mask, random_state=80, contour_width=2, contour_color='orange').generate(" ".join(option))
-        fig = plt.figure()
-        plt.imshow(wordcloud, interpolation="bilinear")
-        plt.axis("off")
-        plt.style.use('dark_background')
+        fig = matplotlib.pyplot.figure()
+        matplotlib.pyplot.imshow(wordcloud, interpolation="bilinear")
+        matplotlib.pyplot.axis("off")
+        matplotlib.pyplot.style.use('dark_background')
         fig.savefig("streamlit_presentation/word_clouds/word_cloud.png")
         why_i_hate_streamlit = Image.open('streamlit_presentation/word_clouds/word_cloud.png')
         # why_i_hate_streamlit = why_i_hate_streamlit.resize((1000, 1000))
@@ -249,10 +247,10 @@ with st.expander('Облака сущностей'):
         img = Image.open("streamlit_presentation/word_clouds/mozg_3.tif")
         wave_mask = np.array(img)
         wordcloud = WordCloud(color_func=grey_color_func, mask=wave_mask, random_state=80, contour_width=1, contour_color='grey').generate(" ".join(option))
-        fig = plt.figure()
-        plt.imshow(wordcloud, interpolation="bilinear")
-        plt.axis("off")
-        plt.style.use('dark_background')
+        fig = matplotlib.pyplot.figure()
+        matplotlib.pyplot.imshow(wordcloud, interpolation="bilinear")
+        matplotlib.pyplot.axis("off")
+        matplotlib.pyplot.style.use('dark_background')
         fig.savefig("streamlit_presentation/word_clouds/word_cloud.png")
         why_i_hate_streamlit = Image.open('streamlit_presentation/word_clouds/word_cloud.png')
         # why_i_hate_streamlit = why_i_hate_streamlit.resize((1000, 1000))
