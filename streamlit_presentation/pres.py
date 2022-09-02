@@ -11,7 +11,6 @@ import squarify
 import joblib
 from PIL import Image
 
-
 df_1 = pd.read_csv('streamlit_presentation/datasets/df_name_Date_text_topic_keywords.csv')
 df_2 = pd.read_csv('streamlit_presentation/datasets/df_organizations_persons_locations_krasivi_text.csv')
 df = pd.concat([df_1, df_2], axis = 1)
@@ -127,12 +126,6 @@ with st.expander('Описание датасета'):
     st.plotly_chart(figure, filename='squarify-tree', use_container_width=True)
 
 st.header('ТЕМАТИЧЕСКОЕ МОДЕЛИРОВАНИЕ (Latent Dirichlet Allocation, LDA)')
-with st.expander('Дополнительная информация'):
-    st.image('streamlit_presentation/pictures/mf.png', use_column_width=True)
-    st.markdown('Почитайте документацию ' 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html')
-    st.markdown('Или статьи какие-нибудь:')
-    st.markdown('   Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent dirichlet allocation. Journal of machine Learning research, 3(Jan), 993-1022')
-    st.markdown('   Hoffman, M., Bach, F., & Blei, D. (2010). Online learning for latent dirichlet allocation. Advances in Neural Information Processing Systems, 23.')
 
 with st.expander('Интерактивная визуализация результатов тематического моделирования'):
     with st.spinner('Creating pyLDAvis Visualization ...'):
@@ -140,11 +133,14 @@ with st.expander('Интерактивная визуализация резул
             html_string = f.read()
         components.html(html_string, width=1500, height=800)
 
-st.header('РАСПОЗНАВАНИЕ ИМЕНОВАННЫХ СУЩНОСТЕЙ (Named Entity Recognition, NER)')
 with st.expander('Дополнительная информация'):
-    st.markdown('Имена людей, названия организаций, топонимы и другие имена собственные называют «именованные сущности» (named entities), а саму задачу — «распознавание именованных сущностей» (named entity recognition).')
-    st.markdown('Мы используем библиотеку [Natasha](https://natasha.github.io/ner/), которая играючи справляется со всеми базовыми задачами обработки естественного русского языка: сегментация на токены, морфологический анализ, лемматизация и извлечение именованных сущностей. С помощью Natasha мы вытащили из нашего датасета имена людей, названия организаци и топонимы.')
-    st.image('streamlit_presentation/pictures/natasha.png', caption='Библиотека Natasha объединяет 9 репозиториев под одним интерфейсом.', use_column_width=True)
+    st.image('streamlit_presentation/pictures/mf.png', use_column_width=True)
+    st.markdown('Почитайте документацию ' 'https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html')
+    st.markdown('Или статьи какие-нибудь:')
+    st.markdown('   Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent dirichlet allocation. Journal of machine Learning research, 3(Jan), 993-1022')
+    st.markdown('   Hoffman, M., Bach, F., & Blei, D. (2010). Online learning for latent dirichlet allocation. Advances in Neural Information Processing Systems, 23.')
+
+st.header('РАСПОЗНАВАНИЕ ИМЕНОВАННЫХ СУЩНОСТЕЙ (Named Entity Recognition, NER)')
 with st.expander('Анализ именнованных сущностей'):
     # col_name = st.selectbox("Выберите параметры:", sorted(df.columns[0:3]), index =0)
     # #переименовать колонки
@@ -199,6 +195,10 @@ with st.expander('Анализ именнованных сущностей'):
         
     except KeyError:
         st.write("Ой! Что-то пошло не так. Попробуйте написать слово с маленькой буквы. Если не поможет, то слова нет в датасете.")
+with st.expander('Дополнительная информация'):
+    st.markdown('Имена людей, названия организаций, топонимы и другие имена собственные называют «именованные сущности» (named entities), а саму задачу — «распознавание именованных сущностей» (named entity recognition).')
+    st.markdown('Мы используем библиотеку [Natasha](https://natasha.github.io/ner/), которая играючи справляется со всеми базовыми задачами обработки естественного русского языка: сегментация на токены, морфологический анализ, лемматизация и извлечение именованных сущностей. С помощью Natasha мы вытащили из нашего датасета имена людей, названия организаци и топонимы.')
+    st.image('streamlit_presentation/pictures/natasha.png', caption='Библиотека Natasha объединяет 9 репозиториев под одним интерфейсом.', use_column_width=True)
 
 with st.expander('Облака сущностей'):
     def grey_color_func(word, font_size, position, orientation, random_state=None,
